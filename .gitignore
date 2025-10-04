@@ -1,0 +1,7 @@
+.conda
+.conda/
+.conda/*
+
+downloaded_data
+processed_data
+map_tiles

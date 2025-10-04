@@ -1,0 +1,44 @@
+<VRTDataset rasterXSize="11918" rasterYSize="29390" subClass="VRTWarpedDataset">
+  <SRS dataAxisToSRSAxisMapping="2,1">GEOGCS["WGS 84",DATUM["WGS_1984",SPHEROID["WGS 84",6378137,298.257223563,AUTHORITY["EPSG","7030"]],AUTHORITY["EPSG","6326"]],PRIMEM["Greenwich",0,AUTHORITY["EPSG","8901"]],UNIT["degree",0.0174532925199433,AUTHORITY["EPSG","9122"]],AXIS["Latitude",NORTH],AXIS["Longitude",EAST],AUTHORITY["EPSG","4326"]]</SRS>
+  <GeoTransform> -3.3276428938766806e+01,  1.0630671291577965e-05,  0.0000000000000000e+00, -4.3676299423656587e+01,  0.0000000000000000e+00, -1.0630671291577965e-05</GeoTransform>
+  <Metadata domain="IMAGE_STRUCTURE">
+    <MDI key="INTERLEAVE">PIXEL</MDI>
+  </Metadata>
+  <VRTRasterBand dataType="Byte" band="1" subClass="VRTWarpedRasterBand">
+    <ColorInterp>Gray</ColorInterp>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Byte" band="2" subClass="VRTWarpedRasterBand">
+    <ColorInterp>Alpha</ColorInterp>
+  </VRTRasterBand>
+  <BlockXSize>512</BlockXSize>
+  <BlockYSize>128</BlockYSize>
+  <GDALWarpOptions>
+    <WarpMemoryLimit>6.71089e+07</WarpMemoryLimit>
+    <ResampleAlg>NearestNeighbour</ResampleAlg>
+    <WorkingDataType>Byte</WorkingDataType>
+    <Option name="INIT_DEST">0</Option>
+    <Option name="ERROR_OUT_IF_EMPTY_SOURCE_WINDOW">FALSE</Option>
+    <SourceDataset relativeToVRT="0">c:\Users\user\Desktop\mars-mapper\processed_data\mosaic.tif</SourceDataset>
+    <Transformer>
+      <GenImgProjTransformer>
+        <SrcGeoTransform>-3937.5552521967757,0.63012982527793504,0,-1403405.4868084737,0,-0.63012982527793504</SrcGeoTransform>
+        <SrcInvGeoTransform>6248.8000000000238,1.5869745564875051,0,-2227168.8000000087,0,-1.5869745564875051</SrcInvGeoTransform>
+        <DstGeoTransform>-33.276428938766806,1.0630671291577965e-05,0,-43.676299423656587,0,-1.0630671291577965e-05</DstGeoTransform>
+        <DstInvGeoTransform>3130228.3765588445,94067.436812973348,0,-4108517.5362593201,0,-94067.436812973348</DstInvGeoTransform>
+        <ReprojectTransformer>
+          <ReprojectionTransformer>
+            <SourceSRS>PROJCS["Equirectangular MARS",GEOGCS["GCS_MARS",DATUM["unnamed",SPHEROID["unnamed",3396190,0]],PRIMEM["Reference meridian",0],UNIT["degree",0.0174532925199433,AUTHORITY["EPSG","9122"]]],PROJECTION["Equirectangular"],PARAMETER["latitude_of_origin",-20],PARAMETER["central_meridian",326.79],PARAMETER["standard_parallel_1",0],PARAMETER["false_easting",0],PARAMETER["false_northing",0],UNIT["metre",1,AUTHORITY["EPSG","9001"]],AXIS["Easting",EAST],AXIS["Northing",NORTH]]</SourceSRS>
+            <TargetSRS>GEOGCS["WGS 84",DATUM["WGS_1984",SPHEROID["WGS 84",6378137,298.257223563,AUTHORITY["EPSG","7030"]],AUTHORITY["EPSG","6326"]],PRIMEM["Greenwich",0,AUTHORITY["EPSG","8901"]],UNIT["degree",0.0174532925199433,AUTHORITY["EPSG","9122"]],AXIS["Latitude",NORTH],AXIS["Longitude",EAST],AUTHORITY["EPSG","4326"]]</TargetSRS>
+            <Options>
+              <Option key="AREA_OF_INTEREST">-33.27642893876681,-43.98873485291604,-33.14973259831372,-43.67629942365659</Option>
+            </Options>
+          </ReprojectionTransformer>
+        </ReprojectTransformer>
+      </GenImgProjTransformer>
+    </Transformer>
+    <BandList>
+      <BandMapping src="1" dst="1" />
+    </BandList>
+    <DstAlphaBand>2</DstAlphaBand>
+  </GDALWarpOptions>
+</VRTDataset>

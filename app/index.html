@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Mars Map</title>
+
+    <!-- LeafletJS 函式庫 -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+    <!-- 我們的網頁樣式 -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="map"></div>
+
+    <script>
+        // --- 地圖設定 ---
+
+        // 初始化地圖，並將其視圖設置在您感興趣的座標和縮放級別
+        // !!! 重要 !!! 
+        // 您需要手動調整這裡的 [緯度, 經度] 和縮放級別 (zoom)
+        // 以便地圖一打開就能看到您的影像。
+        // 一開始您可能需要不斷平移和縮放來找到您的影像。
+        const map = L.map('map').setView([44.0876, -33.3984], 11);
+
+        // --- 圖層設定 ---
+
+        // 新增您的本地圖磚圖層
+        // '{z}/{x}/{y}.png' 是 Leaflet 用來請求圖磚的標準格式
+        // ../3_map_tiles/ 是從 app/index.html 指向圖磚資料夾的相對路徑
+        L.tileLayer('../map_tiles/{z}/{x}/{y}.png', {
+            attribution: 'Map data &copy; NASA/JPL/University of Arizona',
+            maxZoom: 18, // 應與 gdal2tiles.py 中設定的最大 zoom 層級一致
+            minZoom: 10,  // 應與 gdal2tiles.py 中設定的最小 zoom 層級一致
+            tms: true,   // !!! 非常重要 !!! gdal2tiles 預設使用 TMS 座標系
+            noWrap: true, // 防止地圖在水平方向重複
+            tms: true
+        }).addTo(map);
+
+    </script>
+</body>
+
+</html>

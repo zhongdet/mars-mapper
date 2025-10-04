@@ -1,0 +1,1 @@
+conda activate C:\Users\user\Desktop\mars-mapper\.conda
